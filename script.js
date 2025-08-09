@@ -11,3 +11,10 @@ proxButton.onclick = function() {
 antButton.onclick = function() {
     showSlider('anterior');
 }
+const showSlider = (type) => {
+    let items = document.querySelectorAll('.carrossel .lista .item');
+    if(type == 'proximo'){
+        listaHTML.appendChild(items[0]);
+        carrossel.classList.add('proximo');
+    }
+}

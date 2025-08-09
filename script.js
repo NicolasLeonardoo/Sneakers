@@ -16,5 +16,9 @@ const showSlider = (type) => {
     if(type == 'proximo'){
         listaHTML.appendChild(items[0]);
         carrossel.classList.add('proximo');
+    }else{
+        let ultimo = items.length - 1;
+        listaHTML.prepend(items[ultimo]);
+        carrossel.classList.add('anterior');
     }
 }

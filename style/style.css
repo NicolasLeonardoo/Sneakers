@@ -51,5 +51,8 @@ header nav a{
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    
+}
+.carrossel .lista .item .detalhes{
+    opacity: 0;
+    pointer-events: none;
 }

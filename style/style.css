@@ -56,13 +56,11 @@ header {
 header nav a {
     margin-left: 1.875rem;
 }
+
 header nav a:hover {
     color: #161616;
     cursor: pointer;
-    
-
 }
-
 
 .carrossel {
     margin: -3.125rem;
@@ -70,7 +68,6 @@ header nav a:hover {
     overflow: hidden;
     position: relative;
 }
-
 
 .carrossel .lista {
     position: absolute;
@@ -198,6 +195,7 @@ header nav a:hover {
     opacity: 0;
     pointer-events: none;
 }
+
 .setas #voltar:hover {
     cursor: pointer;
     color: #505050;
@@ -241,7 +239,7 @@ header nav a:hover {
 .verMais:hover {
     cursor: pointer;
     color: #505050;
-    
+
 
 }
 
@@ -383,6 +381,7 @@ header nav a:hover {
 .carrossel.mostrarMais .lista .item:nth-child(2) img {
     right: 50%;
 }
+
 .carrossel.mostrarMais .lista .item:nth-child(2) .detalhes {
     opacity: 1;
     pointer-events: auto;
@@ -423,6 +422,7 @@ header nav a:hover {
     margin-left: 5px;
     font-weight: 500;
 }
+
 .carrossel.mostrarMais .lista .item .detalhes .comprar button:hover {
     background-color: #e6e6e6;
     cursor: pointer;
@@ -434,13 +434,14 @@ header nav a:hover {
     background-color: rgb(0, 0, 0);
     color: #eee;
 }
+
 .carrossel.mostrarMais .lista .item .detalhes .comprar button:nth-child(2):hover {
     background-color: #000000;
     color: #fff;
-    
+
 }
 
-.carrossel.mostrarMais .lista .item:nth-child(2) .detalhes .title,
+.carrossel.mostrarMais .lista .item:nth-child(2) .detalhes .titulo,
 .carrossel.mostrarMais .lista .item:nth-child(2) .detalhes .descricao,
 .carrossel.mostrarMais .lista .item:nth-child(2) .detalhes .especificacoes,
 .carrossel.mostrarMais .lista .item:nth-child(2) .detalhes .comprar {
@@ -501,46 +502,146 @@ header nav a:hover {
     }
 }
 
-@media screen and (max-width: 767px) {
-    .carrossel .list .item {
-        width: 100%;
-        font-size: 10px;
-    }
-
-    .carrosel {
-        height: 600px;
-    }
-
-    .carrossel .list {
-        height: 100%;
-    }
-
-    .carrossel .list .item .intro {
-        width: 50%;
-    }
-
-    .carrossel .list .item img {
-        width: 40%;
-    }
-
-    .carrossel.mostrarMais .list .item .detalhes .titulo {
-        font-size: 2em;
-    }
-
-    .carrossel.mostrarMais .list .item .detalhes .descricao {
-        height: 6.25rem;
-        overflow: auto;
-    }
-
-    .carrossel.mostrarMais .list .item .detalhes .comprar {
-        display: flex;
-        width: max-content;
-        float: right;
-    }
-}
 
 .carrossel.mostrarMais .lista .item:nth-child(2) img:hover {
     transform: translateY(-50%) scale(1.10) rotate(5deg);
     z-index: 10;
     transition: transform 0.2s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s;
+}
+
+@media (max-width: 768px) {
+    .setas {
+        flex-direction: row;
+        /* ou column se preferir empilhados */
+        justify-content: center;
+        /* centraliza */
+        gap: 20%;
+        /* diminui o espaço entre eles */
+        top: 60%;
+    }
+
+    .setas button {
+        margin: 0;
+        /* remove margens extras */
+    }
+    header{
+        margin-bottom: 8%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        /* reduz o tamanho da fonte do título */
+    }
+
+    header nav {
+        margin-left: 0rem;
+        width: auto;
+        font-size: 0.875rem;
+        display: flex;
+        flex-direction: row;
+        gap: 0rem;
+        align-items: center;
+        /* mantém os links na mesma linha e centralizados verticalmente */
+    }
+
+    .carrossel .lista .item img {
+        width: 47%;
+        /* ajusta a largura da imagem */
+        z-index: 0;
+        bottom: 100%;
+        position: relative;
+        left: 90%;
+
+    }
+
+    .carrossel .lista .item .intro {
+        width: 100%;
+        /* ajusta a largura do conteúdo */
+        height: auto;
+        /* ajusta a altura do conteúdo */
+        text-align: center;
+        /* centraliza o texto */
+        font-size: small;
+    }
+
+    .carrossel .lista .item .intro .titulo {
+
+        font-size: 1rem;
+    }
+    .carrossel .lista .item .intro .topico {
+        width: 80%;
+        font-size: 1.30rem;
+        font-weight: bold;
+        margin-left: 10%;
+        
+    }
+     .carrossel .lista .item .intro .descricao{
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        width: 80%;
+        text-align: center;
+        margin-left: 14%;
+     } 
+    .carrossel.mostrarMais .lista .item .detalhes .especificacoes  {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+    border-top: 1px solid #5555;
+    margin-top: 1.25rem;
+    
+    }
+.carrossel.mostrarMais .lista .item .detalhes .especificacoes div {
+    width: 100%;
+}
+.carrossel.mostrarMais .lista .item .detalhes .especificacoes div p {
+    gap: 0.15rem;
+}
+.carrossel.mostrarMais .lista .item .detalhes .comprar button {
+    font-family: poppins;
+    background-color: transparent;
+    border: 1px solid #b8b8b8;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+    .carrossel.mostrarMais .lista .item .detalhes .descricao{
+        font-size: 0.8rem;
+        position: static;
+        width: 90%;
+        margin: 1rem auto 0.5rem auto;
+        text-align: center;
+        font-weight: 500;
+        z-index: 2;
+        display: block;
+    }
+    .carrossel.mostrarMais .lista .item .detalhes .titulo{
+        font-size: 1.1rem;
+        font-weight: 600;
+        width: 90%;
+        margin: 0.5rem auto 0 auto;
+        text-align: center;
+        display: block;
+    }
+    .carrossel.mostrarMais .lista .item:nth-child(2) .detalhes {
+        width: 100%;
+        max-width: 98vw;
+        left: 50%;
+        top: 58%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        box-sizing: border-box;
+        position: absolute;
+    }
+    #voltar {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.675rem;
+        z-index: 100;
+    }
+    .carrossel.mostrarMais .lista .item img{
+        opacity: 0;
+    }
 }

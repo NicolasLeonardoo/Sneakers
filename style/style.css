@@ -512,17 +512,17 @@ header nav a:hover {
 @media (max-width: 768px) {
     .setas {
         flex-direction: row;
-        /* ou column se preferir empilhados */
+       
         justify-content: center;
-        /* centraliza */
-        gap: 20%;
-        /* diminui o espaço entre eles */
+       
+        gap: 15%;
+       
         top: 60%;
     }
 
     .setas button {
         margin: 0;
-        /* remove margens extras */
+       
     }
     header{
         margin-bottom: 8%;
@@ -530,7 +530,7 @@ header nav a:hover {
 
     header h1 {
         font-size: 1.5rem;
-        /* reduz o tamanho da fonte do título */
+       
     }
 
     header nav {
@@ -541,12 +541,12 @@ header nav a:hover {
         flex-direction: row;
         gap: 0rem;
         align-items: center;
-        /* mantém os links na mesma linha e centralizados verticalmente */
+       
     }
 
     .carrossel .lista .item img {
         width: 47%;
-        /* ajusta a largura da imagem */
+       
         z-index: 0;
         bottom: 100%;
         position: relative;
@@ -556,11 +556,11 @@ header nav a:hover {
 
     .carrossel .lista .item .intro {
         width: 100%;
-        /* ajusta a largura do conteúdo */
+       
         height: auto;
-        /* ajusta a altura do conteúdo */
+       
         text-align: center;
-        /* centraliza o texto */
+       
         font-size: small;
     }
 

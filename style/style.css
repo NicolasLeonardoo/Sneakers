@@ -40,11 +40,12 @@ a {
     color: #555;
 }
 
+
 header {
-    width: 1140px;
+    width: 71.25rem;
     max-width: 90%;
     margin: auto;
-    height: 50px;
+    height: 3.125rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,21 +54,29 @@ header {
 }
 
 header nav a {
-    margin-left: 30px;
+    margin-left: 1.875rem;
+}
+header nav a:hover {
+    color: #161616;
+    cursor: pointer;
+    
+
 }
 
+
 .carrossel {
-    margin: -50px;
-    height: 800px;
+    margin: -3.125rem;
+    height: 50rem;
     overflow: hidden;
     position: relative;
 }
+
 
 .carrossel .lista {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 1140px;
+    width: 71.25rem;
     max-width: 90%;
     transform: translateX(-50%);
     height: 80%;
@@ -99,7 +108,7 @@ header nav a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 400px;
+    width: 25rem;
     opacity: 0;
     pointer-events: none;
 }
@@ -152,28 +161,30 @@ header nav a {
     pointer-events: none;
 }
 
+
 .setas {
     position: absolute;
-    bottom: 10px;
-    width: 1140px;
+    bottom: 0.625rem;
+    width: 71.25rem;
     max-width: 90%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
+
 
 .setas #proximo,
 .setas #anterior {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #555;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: #e4e4e4 0.0625rem solid;
     border-radius: 50%;
     font-family: monospace;
     font-size: large;
     font-weight: bold;
+    background-color: #e7e7e7;
 }
 
 .setas #voltar {
@@ -186,6 +197,21 @@ header nav a {
     background-color: transparent;
     opacity: 0;
     pointer-events: none;
+}
+.setas #voltar:hover {
+    cursor: pointer;
+    color: #505050;
+    transform: scale(1.20);
+    transition: transform 0.2s cubic-bezier(.4, 2, .6, 1), color 0.2s;
+}
+
+.setas #proximo:hover,
+.setas #anterior:hover {
+    background-color: #cfcfcf;
+    cursor: pointer;
+    color: #161616;
+    transform: scale(1.20);
+    transition: transform 0.2s cubic-bezier(.4, 2, .6, 1), color 0.2s;
 }
 
 .carrossel .lista .item .intro .titulo {
@@ -209,7 +235,14 @@ header nav a {
     font-family: poppins;
     font-weight: bold;
     margin-top: 1.2em;
-    padding: 5px 0;
+    padding: 0.313rem 0;
+}
+
+.verMais:hover {
+    cursor: pointer;
+    color: #505050;
+    
+
 }
 
 .carrossel .lista .item:nth-child(2) .intro .titulo,
@@ -350,7 +383,6 @@ header nav a {
 .carrossel.mostrarMais .lista .item:nth-child(2) img {
     right: 50%;
 }
-
 .carrossel.mostrarMais .lista .item:nth-child(2) .detalhes {
     opacity: 1;
     pointer-events: auto;
@@ -368,14 +400,14 @@ header nav a {
 
 .carrossel.mostrarMais .lista .item .detalhes .especificacoes {
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     width: 100%;
     border-top: 1px solid #5555;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .carrossel.mostrarMais .lista .item .detalhes .especificacoes div {
-    width: 90px;
+    width: 5.625rem;
     text-align: center;
     flex-shrink: 0;
 }
@@ -387,14 +419,25 @@ header nav a {
 .carrossel.mostrarMais .lista .item .detalhes .comprar button {
     font-family: poppins;
     background-color: transparent;
-    border: 1px solid #555;
+    border: 1px solid #b8b8b8;
     margin-left: 5px;
     font-weight: 500;
+}
+.carrossel.mostrarMais .lista .item .detalhes .comprar button:hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: background-color 0.2s, transform 0.2s cubic-bezier(.4, 2, .6, 1);
 }
 
 .carrossel.mostrarMais .lista .item .detalhes .comprar button:nth-child(2) {
     background-color: rgb(0, 0, 0);
     color: #eee;
+}
+.carrossel.mostrarMais .lista .item .detalhes .comprar button:nth-child(2):hover {
+    background-color: #000000;
+    color: #fff;
+    
 }
 
 .carrossel.mostrarMais .lista .item:nth-child(2) .detalhes .title,
@@ -428,15 +471,16 @@ header nav a {
     pointer-events: auto;
 }
 
+
 .carrossel::before {
-    width: 500px;
-    height: 300px;
+    width: 31.25rem;
+    height: 18.75rem;
     content: '';
     background-image: var(--gradiente-fundo);
     position: absolute;
     z-index: -1;
     border-radius: 10% 30% 80% 10%;
-    filter: blur(150px);
+    filter: blur(9.375rem);
     top: 50%;
     left: 50%;
     transform: translate(-10%, -50%);
@@ -447,45 +491,56 @@ header nav a {
     transform: translate(-100%, -50%) rotate(70deg);
 }
 
-@media screen and (max-width: 991px) {
-    .carrossel .lista .item {
+@media screen and (max-width:991px) {
+    .carrossel .list .item {
         width: 90%;
     }
 
-    .carrossel .lista .detalhes .especificacoes {
+    .carrossel .list .detalhes .especificacoes {
         overflow: auto;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .carrosel .lista .item {
+    .carrossel .list .item {
         width: 100%;
         font-size: 10px;
     }
 
-    .carrossel {
+    .carrosel {
         height: 600px;
     }
 
-    .carrossel .lista {
+    .carrossel .list {
         height: 100%;
     }
-    .carrossel .lista .item .intro{
+
+    .carrossel .list .item .intro {
         width: 50%;
     }
-    .carrossel .lista .item img{
+
+    .carrossel .list .item img {
         width: 40%;
     }
-    .carrossel.mostrarMais .lista .item .detalhes .titulo{
+
+    .carrossel.mostrarMais .list .item .detalhes .titulo {
         font-size: 2em;
     }
-    .carrossel.mostrarMais .lista .item .detalhes .descricao{
+
+    .carrossel.mostrarMais .list .item .detalhes .descricao {
+        height: 6.25rem;
         overflow: auto;
-        height: 100px;
     }
-    .carrossel.mostrarMais .lista .item .detalhes .comprar{
+
+    .carrossel.mostrarMais .list .item .detalhes .comprar {
         display: flex;
         width: max-content;
         float: right;
     }
+}
+
+.carrossel.mostrarMais .lista .item:nth-child(2) img:hover {
+    transform: translateY(-50%) scale(1.10) rotate(5deg);
+    z-index: 10;
+    transition: transform 0.2s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s;
 }

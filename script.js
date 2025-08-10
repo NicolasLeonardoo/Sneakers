@@ -26,6 +26,10 @@ const showSlider = (type) => {
         listaHTML.prepend(items[ultimo]);
         carrossel.classList.add('anterior');
     }
+
+    // Atualiza o gradiente com base no tênis central
+    atualizarGradiente();
+
     clearTimeout(unAccceptClick);
     unAccceptClick = setTimeout(() => {
         proxButton.style.pointerEvents = 'auto';
@@ -33,8 +37,29 @@ const showSlider = (type) => {
     }, 2000);
 }
 
+function atualizarGradiente() {
+    let itemCentral = document.querySelector('.carrossel .lista .item:nth-child(2)');
+    let nomeTenis = itemCentral.querySelector('.topico').innerText.trim();
+    if (gradientes[nomeTenis]) {
+        document.documentElement.style.setProperty('--gradiente-fundo', gradientes[nomeTenis]);
+    }
+}
 verMaisButtons.forEach(button => {
     button.onclick = function() {
         carrossel.classList.add('mostrarMais');
     }
 })
+voltarButton.onclick = function() {
+    carrossel.classList.remove('mostrarMais');
+}
+
+const gradientes = {
+    "Air Jordan 1 High OG": "radial-gradient(circle, #FF3B3F, #000000)",
+    "Air Jordan 4 Thunder": "radial-gradient(circle,rgb(214, 218, 11), #1a1a1a)",
+    "Dunk Low": "radial-gradient(circle, #7ED56F, #FFFFFF)",
+    "Kyrie 1 'Letterman'": "radial-gradient(circle, #FFD700, #00BFFF)",
+    "Blazer Mid x OFF-WHITE": "radial-gradient(circle,rgb(248, 209, 142),rgb(248, 224, 167))"
+};
+
+// Atualiza o gradiente ao carregar a página
+atualizarGradiente();
